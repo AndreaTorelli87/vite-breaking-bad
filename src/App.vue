@@ -3,8 +3,11 @@ import axios from 'axios';
 import { store } from './store.js';
 import MyHeader from './components/MyHeader.vue';
 import CardList from './components/CardList.vue';
+import Loading from './components/Loading.vue';
+
 export default {
   components: {
+    Loading,
     MyHeader,
     CardList,
   },
@@ -18,8 +21,7 @@ export default {
       axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=Blue-Eyes')
         .then(response => {
           this.store.cardListApi = response.data;
-          console.log(this.store.cardListApi.data);
-          // this.store.loading = false;
+          this.store.loading = false;
         });
     }
   },
@@ -31,6 +33,7 @@ export default {
 </script>
 
 <template>
+  <Loading />
   <MyHeader />
   <div class="sfondo">
     <CardList />

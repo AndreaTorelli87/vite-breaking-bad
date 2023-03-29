@@ -4,6 +4,6 @@ export const store = reactive(
    {
       cardListApi: [],
       // search: '',
-      // loading: true
+      loading: true
    }
 );
