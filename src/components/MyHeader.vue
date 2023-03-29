@@ -1,6 +1,5 @@
 <script>
 
-// import CardList from './components/CardList.vue';
 export default {
    name: "MyHeader",
    components: {

@@ -18,13 +18,13 @@ export default {
       axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=Blue-Eyes')
         .then(response => {
           this.store.cardListApi = response.data;
-          console.log(this.store.cardListApi);
+          console.log(this.store.cardListApi.data);
           // this.store.loading = false;
         });
     }
   },
   created() {
-    // this.getCards();
+    this.getCards();
   }
 }
 
