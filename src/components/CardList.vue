@@ -15,11 +15,11 @@ export default {
 </script>
 
 <template>
-      <div class="container py-5">
+      <div class="container py-3">
          <div class="row p-5 bg-white">
             <div class="col-2 px-1" v-for="(carta, index) in store.cardListApi.data" :key="index">
                <Card
-               :image="carta.card_images[0].image_url"
+               :image="carta.card_images[0].image_url_small"
                :name="carta.name"
                :type="carta.type"
                />

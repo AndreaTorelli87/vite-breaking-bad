@@ -1,12 +1,3 @@
-<template>
-   <div class="loading h-100 w-100 d-flex flex-column justify-content-center align-items-center" v-if="store.loading">
-      <h1 class="fw-bold">Caricamento in corso...</h1>
-      <div class="well">
-         <i class="icon fas fa-circle-notch fw-bold"></i>
-      </div>
-   </div>
-</template>
-
 <script>
 import { store } from '../store.js';
 export default {
@@ -19,6 +10,14 @@ export default {
 }
 </script>
 
+<template>
+   <div class="loading h-100 w-100 d-flex flex-column justify-content-center align-items-center" v-if="store.loading">
+      <h1 class="fw-bold">Caricamento in corso...</h1>
+      <div class="well">
+         <i class="icon fas fa-circle-notch fw-bold"></i>
+      </div>
+   </div>
+</template>
 
 <style lang="scss" scoped>
 @use '../styles/General.scss' as *;
