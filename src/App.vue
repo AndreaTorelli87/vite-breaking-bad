@@ -25,7 +25,8 @@ export default {
       let urlApi = 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0';
 
       if (store.selezioneFiltro.length > 0) {
-        urlApi += `?archetype={store.selezioneFiltro}`;
+        urlApi += `?archetype=${store.selezioneFiltro}`;
+        console.log("la funzione getCard è entrata nel if")
       }
 
 
@@ -34,12 +35,13 @@ export default {
           this.store.cardListApi = response.data;
           this.store.loading = false;
         });
+        store.selezioneFiltro = ""
+      console.log("la funzione getCard è terminata")
     },
     getFilter() {
       axios.get("https://db.ygoprodeck.com/api/v7/archetypes.php")
         .then(response => {
           this.store.archetypeListApi = response.data;
-          console.log(store.archetypeListApi[0].archetype_name)
         });
     },
   },
